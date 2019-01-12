@@ -1,5 +1,5 @@
-export const incAction = () => ({ type: 'INC' });
+export const inc = () => ({ type: 'INC' });
 
-export const decAction = () => ({ type: 'DEC' });
+export const dec = () => ({ type: 'DEC' });
 
-export const rndAction = payload => ({ type: 'RND', payload });
+export const rnd = payload => ({ type: 'RND', payload });
