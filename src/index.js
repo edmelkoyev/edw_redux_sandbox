@@ -15,18 +15,22 @@ const reducer = (state = 0, action) => {
 
 const store = createStore(reducer);
 
+const incAction = () => ({ type: 'INC' });
+const decAction = () => ({ type: 'DEC' });
+const rndAction = payload => ({ type: 'INC', payload });
+
 document.getElementById('inc').addEventListener('click', () => {
-  store.dispatch({ type: 'INC' });
+  store.dispatch(incAction());
 });
 
 document.getElementById('dec').addEventListener('click', () => {
-  store.dispatch({ type: 'DEC' });
+  store.dispatch(decAction());
 });
 
 document.getElementById('rnd').addEventListener('click', () => {
   const payload = Math.floor(Math.random() * 10);
   console.log(`RND payload value: ${payload}`);
-  store.dispatch({ type: 'RND', payload });
+  store.dispatch(rndAction(payload));
 });
 
 const update = () => {
