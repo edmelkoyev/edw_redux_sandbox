@@ -1,23 +1,9 @@
 import { createStore } from 'redux';
 
-const reducer = (state = 0, action) => {
-  switch (action.type) {
-    case 'RND':
-      return state + action.payload;
-    case 'INC':
-      return state + 1;
-    case 'DEC':
-      return state - 1;
-    default:
-      return state;
-  }
-};
+import reducer from './reducer';
+import { decAction, incAction, rndAction } from './actions';
 
 const store = createStore(reducer);
-
-const incAction = () => ({ type: 'INC' });
-const decAction = () => ({ type: 'DEC' });
-const rndAction = payload => ({ type: 'INC', payload });
 
 document.getElementById('inc').addEventListener('click', () => {
   store.dispatch(incAction());
