@@ -4,19 +4,22 @@ import reducer from './reducer';
 import { decAction, incAction, rndAction } from './actions';
 
 const store = createStore(reducer);
+const { dispatch } = store;
 
-document.getElementById('inc').addEventListener('click', () => {
-  store.dispatch(incAction());
-});
+const bindActionCreator = (aCreatorFunction, dispatchFunction) => (...params) => {
+  dispatchFunction(aCreatorFunction(...params));
+};
 
-document.getElementById('dec').addEventListener('click', () => {
-  store.dispatch(decAction());
-});
+const incDispatch = bindActionCreator(incAction, dispatch);
+const decDispatch = bindActionCreator(decAction, dispatch);
+const rndDispatch = bindActionCreator(rndAction, dispatch);
 
+document.getElementById('inc').addEventListener('click', incDispatch);
+document.getElementById('dec').addEventListener('click', decDispatch);
 document.getElementById('rnd').addEventListener('click', () => {
   const payload = Math.floor(Math.random() * 10);
   console.log(`RND payload value: ${payload}`);
-  store.dispatch(rndAction(payload));
+  rndDispatch(payload);
 });
 
 const update = () => {
