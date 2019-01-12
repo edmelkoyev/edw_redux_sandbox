@@ -5,6 +5,9 @@ module.exports = {
     },
     "parserOptions": {},
     "rules": {
-        "no-console": 0
+        "no-console": 0,
+        "react/jsx-filename-extension": 0,
+        "react/jsx-wrap-multilines": 0,
+        "react/prop-types": 0
     }
 };
