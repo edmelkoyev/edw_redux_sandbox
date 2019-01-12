@@ -42,3 +42,9 @@ npm i --save-dev lint-staged husky
   + husky@1.3.1
   + lint-staged@8.1.0
 
+Redux 
+------------------
+npm i --save redux react-redux
+  + redux@4.0.1
+  + react-redux@6.0.0
+
