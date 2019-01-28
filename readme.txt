@@ -48,3 +48,8 @@ npm i --save redux react-redux
   + redux@4.0.1
   + react-redux@6.0.0
 
+
+References:
+------------------
+Commit Workflow
+https://www.jakewiesler.com/blog/my-commit-workflow/
